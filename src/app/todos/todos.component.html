@@ -1,0 +1,33 @@
+<div class="col-lg-12">
+  <div *ngIf="appState == 'default'">
+    <label-success> Add todos</label-success>
+    <form (submit)="addTodo()">
+      <input class="form-control" type="text" [(ngModel)]="text" [ngModelOptions]="{standalone: true}" placeholder="Create a to-do list">
+    </form>
+  </div>
+
+
+  <div *ngIf="appState == 'edit'">
+    <label-success> Edit todos</label-success>
+    <form (submit)="updateTodo()">
+      <input class="form-control" type="text" [(ngModel)]="text">
+    </form>
+  </div>
+
+  <ul class="list-group clearfix">
+    <!-- Loop through data -->
+    <li *ngFor="let todo of todos" class="list-group-item">
+      <span (click)="editTodo(todo)"> {{todo.text}} </span>
+      <button class="btn btn-danger" (click)="deleteTodo(todo.text)" value="Delete">X</button>
+    </li>
+  </ul>
+
+  <!--<ul class="list-group clearfix">
+    <label class="label-pill">Data from firebase storage</label>
+    <!-- Loop through data -->
+    <!--<li *ngFor="let todo of todos" class="list-group-item">
+      {{todo['text']}}
+    </li>
+  </ul>-->
+
+</div>

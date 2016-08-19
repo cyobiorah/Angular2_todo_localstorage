@@ -9,8 +9,9 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-};
 
+};
+// import  "angularfire2";
 /** User packages configuration. */
 const packages: any = {
 };
@@ -29,10 +30,8 @@ const barrels: string[] = [
   '@angular/router',
   '@angular/platform-browser',
   '@angular/platform-browser-dynamic',
-
   // Thirdparty barrels.
   'rxjs',
-
   // App specific barrels.
   'app',
   'app/shared',
@@ -50,7 +49,7 @@ declare var System: any;
 // Apply the CLI SystemJS configuration.
 System.config({
   map: {
-    '@angular': 'vendor/@angular',
+      '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
     'main': 'main.js'
   },
